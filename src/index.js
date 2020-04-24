@@ -23,9 +23,21 @@ const element = (
   </h1>
 );
 
+function NumberList(props) {
+  const numbers = props.numbers;
+  //key 只是在兄弟节点之间必须唯一,不要使用index作为key
+  const listItems = numbers.map( (number) => 
+      <li key={number.toString()}>
+        {number}
+      </li>
+  );
+  return listItems;
+}
+
+const numbers = [1,2,3,4,5];
+
 
 ReactDOM.render(
-
   <div>
     {element}
     {/* //所有 React 组件都必须像纯函数一样保护它们的 props 不被更改 */}
@@ -34,6 +46,7 @@ ReactDOM.render(
     <Toggle />
     <LoginControl />
     <Page/>
+    <NumberList numbers = {numbers}/>
   </div>,
 
   document.getElementById('root')
