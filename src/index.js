@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Welcome from './welcome';
+import Welcome from './Welcome';
+import Clock from './Clock';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -25,6 +26,7 @@ ReactDOM.render(
      {element}
      {/* //所有 React 组件都必须像纯函数一样保护它们的 props 不被更改 */}
      <Welcome name="vae"/>
+     <Clock/>
   </div>,
  
   document.getElementById('root')
